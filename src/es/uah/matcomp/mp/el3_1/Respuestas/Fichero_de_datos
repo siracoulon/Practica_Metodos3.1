@@ -1,0 +1,28 @@
+Métodos guardarObjetoEnArchivo y cargarObjetoDesdeArchivo:
+    Los métodos guardarObjetoEnArchivo y cargarObjetoDesdeArchivo forman parte de una clase
+    utilitaria que usa la biblioteca Gson para realizar operaciones de serialización y
+    deserialización de objetos Java a archivos en formato JSON.
+
+    El método guardarObjetoEnArchivo(String rutaArchivo, T objeto) se encarga de convertir un objeto
+    Java en texto JSON y luego guardar ese texto en un archivo en la ruta que se indique.
+    El método cargarObjetoDesdeArchivo(String rutaArchivo, Class<T> clase), por otro lado, realiza la
+    operación inversa: lee un archivo JSON desde el disco y reconstruye un objeto Java a partir del
+    contenido leído.
+
+
+Uso de static y porque se utiliza en ese ejemplo
+    El modificador static en Java se utiliza para indicar que un método pertenece a la clase y no a
+    una instancia específica de ella. Los métodos guardarObjetoEnArchivo y cargarObjetoDesdeArchivo son
+    estáticos porque no requieren acceder a atributos ni comportamientos particulares de un objeto de
+    la clase GsonUtilEjemplo; simplemente realizan una tarea general (guardar o leer objetos en formato JSON).
+    Al declararlos como static, se permite invocarlos directamente desde otras clases o desde el método main
+    sin necesidad de crear una instancia de GsonUtilEjemplo, lo que simplifica su uso y refleja su propósito
+    como métodos utilitarios.
+
+
+Donde se guarda el fichero de datos:
+    El fichero de datos se guarda en la ruta que se indique como argumento en el método guardarObjetoEnArchivo,
+    ya que el FileWriter crea o sobrescribe un archivo en esa ubicación. En este caso, la ruta es "usuario.json",
+    lo que significa que el archivo se guarda en el directorio raíz del proyecto (es decir, en la misma carpeta
+    donde se ejecuta el programa). Si se especificara una ruta más detallada, como "datos/usuario.json" o
+    "C:/archivos/usuario.json", el fichero se guardaría en esa ubicación específica del sistema de archivos.
